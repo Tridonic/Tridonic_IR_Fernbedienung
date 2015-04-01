@@ -1,2 +1,3 @@
 # Tridonic_IR_Fernbedienung
-RC5 und RC6 Android App IR Fernbedienung für MSensoren.
+Eine Android Application, die die mommentan vorhandene DALI-RC Fernbedienung ersetzen soll.
+Sie versendet RC6 und RC5 Infra-Rot Befehle.
