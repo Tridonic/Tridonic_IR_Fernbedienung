@@ -1,0 +1,7 @@
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
+        <item name="android:colorPrimary">@color/action_bar_color</item>
+        <item name="android:colorPrimaryDark">@color/notification_bar</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+</resources>
