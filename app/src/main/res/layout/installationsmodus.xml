@@ -14,8 +14,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="        100%        "
-            android:id="@+id/direct100"
+            android:text="      active      "
+            android:id="@+id/motion_active"
             android:layout_marginTop="104dp"
             android:layout_marginStart="30dp"
             android:layout_alignParentTop="true"
@@ -24,56 +24,47 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="         50%         "
-            android:id="@+id/direct50"
+            android:text="   only off    "
+            android:id="@+id/motion_onlyoff"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/direct100"
-            android:layout_alignStart="@+id/direct100" />
+            android:layout_below="@+id/motion_active"
+            android:layout_alignStart="@+id/motion_active" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="         25%         "
-            android:id="@+id/direct25"
+            android:text="    inactive    "
+            android:id="@+id/motion_inactive"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/direct50"
-            android:layout_alignStart="@+id/direct50" />
+            android:layout_below="@+id/motion_onlyoff"
+            android:layout_alignStart="@+id/motion_onlyoff" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="         12%         "
-            android:id="@+id/direct12"
-            android:layout_below="@+id/direct25"
-            android:layout_alignStart="@+id/direct25"
+            android:text="      active      "
+            android:id="@+id/light_active"
+            android:layout_below="@+id/motion_inactive"
+            android:layout_alignStart="@+id/motion_inactive"
             android:layout_marginTop="20dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="          6%          "
-            android:id="@+id/direct6"
+            android:text="    inactive    "
+            android:id="@+id/light_inactive"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/direct12"
-            android:layout_alignStart="@+id/direct12" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="      ON/OFF     "
-            android:id="@+id/on_off"
-            android:layout_marginEnd="38dp"
-            android:layout_alignTop="@+id/direct100"
-            android:layout_alignParentEnd="true"/>
+            android:layout_below="@+id/light_active"
+            android:layout_alignStart="@+id/light_active" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+"
-            android:id="@+id/up"
-            android:layout_alignTop="@+id/direct50"
-            android:layout_alignEnd="@+id/on_off" />
+            android:id="@+id/next"
+            android:layout_alignTop="@+id/down"
+            android:layout_alignEnd="@+id/assign" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -81,32 +72,69 @@
             android:layout_height="wrap_content"
             android:text="-"
             android:id="@+id/down"
-            android:layout_alignTop="@+id/up"
-            android:layout_alignStart="@+id/on_off" />
+            android:layout_marginStart="58dp"
+            android:layout_alignTop="@+id/motion_active"
+            android:layout_toEndOf="@+id/textView4" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="  Automatik "
-            android:id="@+id/auto"
-            android:layout_alignTop="@+id/direct25"
-            android:layout_alignEnd="@+id/up" />
+            android:text="      assign       "
+            android:id="@+id/assign"
+            android:layout_above="@+id/light_active"
+            android:layout_alignStart="@+id/down" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="     Szene 0     "
-            android:id="@+id/scene0"
-            android:layout_alignTop="@+id/direct12"
-            android:layout_alignEnd="@+id/auto" />
+            android:text="      remove     "
+            android:id="@+id/remove"
+            android:layout_alignTop="@+id/light_active"
+            android:layout_alignEnd="@+id/assign" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="     Szene 1     "
-            android:id="@+id/scene1"
-            android:layout_alignTop="@+id/direct6"
-            android:layout_alignEnd="@+id/scene0" />
+            android:text="  start adr.  "
+            android:id="@+id/start_adress"
+            android:layout_alignTop="@+id/light_inactive"
+            android:layout_alignEnd="@+id/remove" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Lichtregelung"
+            android:id="@+id/textView3"
+            android:layout_above="@+id/remove"
+            android:layout_alignStart="@+id/light_active" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Bewegungserkennung"
+            android:id="@+id/textView4"
+            android:layout_above="@+id/down"
+            android:layout_alignStart="@+id/motion_active" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Select Device"
+            android:id="@+id/textView5"
+            android:layout_above="@+id/up"
+            android:layout_alignStart="@+id/down" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Adressierung"
+            android:id="@+id/textView6"
+            android:layout_above="@+id/assign"
+            android:layout_alignStart="@+id/start_adress" />
 
 
     </RelativeLayout>

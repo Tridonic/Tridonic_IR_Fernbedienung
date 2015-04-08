@@ -119,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="     Szene 0     "
-            android:id="@+id/scene0"
+            android:id="@+id/szene0"
             android:layout_alignTop="@+id/direct12"
             android:layout_alignEnd="@+id/auto" />
 
@@ -127,9 +127,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="     Szene 1     "
-            android:id="@+id/scene1"
+            android:id="@+id/szene1"
             android:layout_alignTop="@+id/direct6"
-            android:layout_alignEnd="@+id/scene0" />
+            android:layout_alignEnd="@+id/szene0" />
 
 
     </RelativeLayout>
