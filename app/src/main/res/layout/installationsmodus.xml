@@ -1,6 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical">
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="        100%        "
+            android:id="@+id/direct100"
+            android:layout_marginTop="104dp"
+            android:layout_marginStart="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="         50%         "
+            android:id="@+id/direct50"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/direct100"
+            android:layout_alignStart="@+id/direct100" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="         25%         "
+            android:id="@+id/direct25"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/direct50"
+            android:layout_alignStart="@+id/direct50" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="         12%         "
+            android:id="@+id/direct12"
+            android:layout_below="@+id/direct25"
+            android:layout_alignStart="@+id/direct25"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          6%          "
+            android:id="@+id/direct6"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/direct12"
+            android:layout_alignStart="@+id/direct12" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="      ON/OFF     "
+            android:id="@+id/on_off"
+            android:layout_marginEnd="38dp"
+            android:layout_alignTop="@+id/direct100"
+            android:layout_alignParentEnd="true"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:id="@+id/up"
+            android:layout_alignTop="@+id/direct50"
+            android:layout_alignEnd="@+id/on_off" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/down"
+            android:layout_alignTop="@+id/up"
+            android:layout_alignStart="@+id/on_off" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Automatik "
+            android:id="@+id/auto"
+            android:layout_alignTop="@+id/direct25"
+            android:layout_alignEnd="@+id/up" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="     Szene 0     "
+            android:id="@+id/scene0"
+            android:layout_alignTop="@+id/direct12"
+            android:layout_alignEnd="@+id/auto" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="     Szene 1     "
+            android:id="@+id/scene1"
+            android:layout_alignTop="@+id/direct6"
+            android:layout_alignEnd="@+id/scene0" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textView2"
+        android:layout_gravity="center_vertical" />
 </LinearLayout>

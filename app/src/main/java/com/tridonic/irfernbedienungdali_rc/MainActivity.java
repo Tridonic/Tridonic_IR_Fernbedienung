@@ -17,10 +17,10 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.standardmodus);
+        setContentView(R.layout.installationsmodus);
 
-        spinner = (Spinner) findViewById(R.id.layer_chooser);
-        addLayer();
+       // spinner = (Spinner) findViewById(R.id.layer_chooser);
+       // addLayer();
 
     }
 
