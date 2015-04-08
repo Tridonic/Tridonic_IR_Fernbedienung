@@ -21,20 +21,11 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ON/OFF"
-            android:id="@+id/on_off"
-            android:layout_alignBottom="@+id/prev_group"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text=">"
             android:id="@+id/next_group"
-            android:layout_alignTop="@+id/on_off"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:layout_above="@+id/auto"
+            android:layout_alignParentEnd="true" />
 
         <Button
             android:layout_width="wrap_content"
@@ -68,16 +59,33 @@
             android:layout_height="wrap_content"
             android:text="      Dimm Up      "
             android:id="@+id/up"
-            android:layout_above="@+id/save_scene0"
-            android:layout_toEndOf="@+id/on_off" />
+            android:layout_alignTop="@+id/auto"
+            android:layout_alignEnd="@+id/next_group" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="   Dimm Down   "
             android:id="@+id/down"
-            android:layout_alignBottom="@+id/save_scene1"
-            android:layout_toEndOf="@+id/on_off" />
+            android:layout_alignTop="@+id/save_scene1"
+            android:layout_alignStart="@+id/button" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="       ON/OFF        "
+            android:id="@+id/button"
+            android:layout_alignTop="@+id/save_scene0"
+            android:layout_alignStart="@+id/up" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Select Group"
+            android:id="@+id/textView7"
+            android:layout_above="@+id/next_group"
+            android:layout_alignStart="@+id/prev_group" />
 
     </RelativeLayout>
 </LinearLayout>
