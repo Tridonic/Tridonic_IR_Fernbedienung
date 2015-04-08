@@ -3,4 +3,81 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="&lt;"
+            android:id="@+id/prev_group"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ON/OFF"
+            android:id="@+id/on_off"
+            android:layout_alignBottom="@+id/prev_group"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=">"
+            android:id="@+id/next_group"
+            android:layout_alignTop="@+id/on_off"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Automatik   "
+            android:id="@+id/auto"
+            android:layout_below="@+id/prev_group"
+            android:layout_alignStart="@+id/prev_group"
+            android:layout_marginTop="49dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Save scene 0 "
+            android:id="@+id/save_scene0"
+            android:layout_below="@+id/auto"
+            android:layout_alignStart="@+id/save_scene1"
+            android:layout_marginTop="49dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Save Scene 1 "
+            android:id="@+id/save_scene1"
+            android:layout_below="@+id/save_scene0"
+            android:layout_alignStart="@+id/auto"
+            android:layout_marginTop="49dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="      Dimm Up      "
+            android:id="@+id/up"
+            android:layout_above="@+id/save_scene0"
+            android:layout_toEndOf="@+id/on_off" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Dimm Down   "
+            android:id="@+id/down"
+            android:layout_alignBottom="@+id/save_scene1"
+            android:layout_toEndOf="@+id/on_off" />
+
+    </RelativeLayout>
 </LinearLayout>

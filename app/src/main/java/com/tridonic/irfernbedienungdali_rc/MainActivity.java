@@ -17,7 +17,8 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.installationsmodus);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.programmiermodus);
 
        // spinner = (Spinner) findViewById(R.id.layer_chooser);
        // addLayer();
