@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class programmiermodus extends Activity {
     public ir_send_command ir = new ir_send_command();
     public Spinner spinner;
     @Override
@@ -20,8 +20,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.programmiermodus);
 
-       // spinner = (Spinner) findViewById(R.id.layer_chooser);
-       // addLayer();
+        // spinner = (Spinner) findViewById(R.id.layer_chooser);
+        // addLayer();
 
     }
 

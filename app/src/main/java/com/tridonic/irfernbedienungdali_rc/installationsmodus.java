@@ -11,17 +11,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends Activity {
+public class installationsmodus extends Activity {
     public ir_send_command ir = new ir_send_command();
     public Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.programmiermodus);
+        setContentView(R.layout.installationsmodus);
 
-       // spinner = (Spinner) findViewById(R.id.layer_chooser);
-       // addLayer();
+        // spinner = (Spinner) findViewById(R.id.layer_chooser);
+        // addLayer();
 
     }
 
