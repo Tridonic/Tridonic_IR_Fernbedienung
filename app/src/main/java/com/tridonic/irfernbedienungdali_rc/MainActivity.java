@@ -8,15 +8,12 @@ package com.tridonic.irfernbedienungdali_rc;
 
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.WindowManager;
 import android.widget.TabHost;
-
-import com.tridonic.irfernbedienungdali_rc.R;
-import com.tridonic.irfernbedienungdali_rc.installationsmodus;
-import com.tridonic.irfernbedienungdali_rc.programmiermodus;
-import com.tridonic.irfernbedienungdali_rc.standardmodus;
+import android.widget.TextView;
 
 
 //File: 	MainActivity.java
@@ -45,9 +42,31 @@ public class MainActivity extends TabActivity {
         //Creates the different tabs. Add new Tab like below:
         mTabHost.addTab(mTabHost.newTabSpec("Standard").setIndicator("Standard").setContent(new Intent(this  ,standardmodus.class )));
         mTabHost.addTab(mTabHost.newTabSpec("Installation").setIndicator("Installation").setContent(new Intent(this ,installationsmodus.class )));
-        mTabHost.addTab(mTabHost.newTabSpec("Programmier").setIndicator("Programmier").setContent(new Intent(this ,programmiermodus.class )));
+        mTabHost.addTab(mTabHost.newTabSpec("Programmier").setIndicator("Programm").setContent(new Intent(this ,programmiermodus.class )));
 
+        //Tab Color management
+        for(int i=0;i<mTabHost.getTabWidget().getChildCount();i++)
+        {
+            TextView tv = (TextView) mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+            tv.setTextColor(Color.parseColor("#ffffff"));
+        }
+        TextView tv = (TextView) mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+        tv.setTextColor(Color.parseColor("#000000"));
         mTabHost.setCurrentTab(0);
+
+        mTabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener(){
+            @Override
+            public void onTabChanged(String tabId) {
+                for(int i=0;i<mTabHost.getTabWidget().getChildCount();i++)
+                {
+                    TextView tv = (TextView) mTabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title); //Unselected Tabs
+                    tv.setTextColor(Color.parseColor("#ffffff"));
+                }
+                TextView tv = (TextView) mTabHost.getCurrentTabView().findViewById(android.R.id.title); //for Selected Tab
+                tv.setTextColor(Color.parseColor("#000000"));
+
+            }});
+
     }
 }
 

@@ -176,7 +176,7 @@ public class standardmodus extends Activity {
     public void addLayer() {
         //Fügt die Layers hinzu
         List<String> list = new ArrayList<String>();
-        for(int i=1;i<16;i++){
+        for(int i=1;i<17;i++){
             list.add("Layer "+i);
         }
 
