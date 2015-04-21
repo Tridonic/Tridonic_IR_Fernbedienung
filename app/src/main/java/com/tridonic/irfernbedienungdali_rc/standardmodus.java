@@ -18,7 +18,7 @@ public class standardmodus extends Activity {
     public ir_send_command ir = new ir_send_command();
     public commands command = new commands();
     public Spinner spinner;
-    public Button direct100,direct50,direct25,direct12,direct6,auto,scene0,scene1,onoff,up,down;    //Variabeln für Alle Buttons die verwendet werden im Layout
+    public Button direct100,direct50,direct25,direct12,direct6,auto,szene0,szene1,onoff,up,down;    //Variabeln für Alle Buttons die verwendet werden im Layout
     public final int K = 461;   //461ms Kurze Dauer
     public final int L = 923;   //923 Lange Dauers
     @Override
@@ -36,8 +36,8 @@ public class standardmodus extends Activity {
         direct12 = (Button) findViewById(R.id.direct12);
         direct6 = (Button) findViewById(R.id.direct6);
         auto = (Button) findViewById(R.id.auto);
-        scene0 = (Button) findViewById(R.id.szene0);
-        scene1 = (Button) findViewById(R.id.szene1);
+        szene0 = (Button) findViewById(R.id.szene0);
+        szene1 = (Button) findViewById(R.id.szene1);
         onoff = (Button) findViewById(R.id.on_off);
         up = (Button) findViewById(R.id.up);
         down = (Button) findViewById(R.id.down);
@@ -50,7 +50,99 @@ public class standardmodus extends Activity {
         direct100.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                int[] pattern = command.getcommands(1);
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,7);
+                ir.send(pattern);
+            }
+        });
+        direct50.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,8);
+                ir.send(pattern);
+            }
+        });
+        direct25.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,9);
+                ir.send(pattern);
+            }
+        });
+        direct12.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,10);
+                ir.send(pattern);
+            }
+        });
+        direct6.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,11);
+                ir.send(pattern);
+            }
+        });
+        onoff.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,1);
+                ir.send(pattern);
+            }
+        });
+        up.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,2);
+                ir.send(pattern);
+            }
+        });
+        down.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,3);
+                ir.send(pattern);
+            }
+        });
+        auto.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,4);
+                ir.send(pattern);
+            }
+        });
+        szene0.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,5);
+                ir.send(pattern);
+            }
+        });
+        szene1.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                int layer = (int)spinner.getSelectedItemId()+1;
+
+                int[] pattern = command.getcommands(layer,6);
                 ir.send(pattern);
             }
         });
@@ -84,7 +176,7 @@ public class standardmodus extends Activity {
     public void addLayer() {
         //Fügt die Layers hinzu
         List<String> list = new ArrayList<String>();
-        for(int i=1;i<17;i++){
+        for(int i=1;i<16;i++){
             list.add("Layer "+i);
         }
 
