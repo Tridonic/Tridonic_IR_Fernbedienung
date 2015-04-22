@@ -54,6 +54,7 @@ public class standardmodus extends Activity {
 
                 int[] pattern = command.getcommands(layer,7);
                 ir.send(pattern);
+
             }
         });
         direct50.setOnClickListener(new View.OnClickListener() {
