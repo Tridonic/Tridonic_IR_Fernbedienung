@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="   Dimm Down   "
-            android:id="@+id/down"
+            android:id="@+id/previous"
             android:layout_alignTop="@+id/save_scene1"
             android:layout_alignStart="@+id/button" />
 

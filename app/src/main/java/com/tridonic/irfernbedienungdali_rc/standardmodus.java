@@ -28,7 +28,7 @@ public class standardmodus extends Activity {
         setContentView(R.layout.standardmodus);
 
         //------------------------------------------------------
-        //Zuweisung alles Buttons
+        //Zuweisung aller Buttons
         spinner = (Spinner) findViewById(R.id.layer_chooser);
         direct100 = (Button) findViewById(R.id.direct100);
         direct50 = (Button) findViewById(R.id.direct50);
@@ -40,7 +40,7 @@ public class standardmodus extends Activity {
         szene1 = (Button) findViewById(R.id.szene1);
         onoff = (Button) findViewById(R.id.on_off);
         up = (Button) findViewById(R.id.up);
-        down = (Button) findViewById(R.id.down);
+        down = (Button) findViewById(R.id.previous);
         //--------------------------------------------------
 
         addLayer();

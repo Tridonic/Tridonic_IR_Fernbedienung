@@ -16,9 +16,8 @@
             android:layout_height="wrap_content"
             android:text="      active      "
             android:id="@+id/motion_active"
-            android:layout_marginTop="104dp"
             android:layout_marginStart="30dp"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/textView4"
             android:layout_alignParentStart="true" />
 
         <Button
@@ -63,7 +62,7 @@
             android:layout_height="wrap_content"
             android:text="+"
             android:id="@+id/next"
-            android:layout_alignTop="@+id/down"
+            android:layout_alignTop="@+id/previous"
             android:layout_alignEnd="@+id/assign" />
 
         <Button
@@ -71,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="-"
-            android:id="@+id/down"
+            android:id="@+id/previous"
             android:layout_marginStart="58dp"
             android:layout_alignTop="@+id/motion_active"
             android:layout_toEndOf="@+id/textView4" />
@@ -81,15 +80,15 @@
             android:layout_height="wrap_content"
             android:text="      assign       "
             android:id="@+id/assign"
-            android:layout_above="@+id/light_active"
-            android:layout_alignStart="@+id/down" />
+            android:layout_alignTop="@+id/motion_onlyoff"
+            android:layout_alignStart="@+id/previous" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="      remove     "
             android:id="@+id/remove"
-            android:layout_alignTop="@+id/light_active"
+            android:layout_alignTop="@+id/motion_inactive"
             android:layout_alignEnd="@+id/assign" />
 
         <Button
@@ -97,8 +96,8 @@
             android:layout_height="wrap_content"
             android:text="  start adr.  "
             android:id="@+id/start_adress"
-            android:layout_alignTop="@+id/light_inactive"
-            android:layout_alignEnd="@+id/remove" />
+            android:layout_alignTop="@+id/light_active"
+            android:layout_alignEnd="@+id/assign" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -106,8 +105,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Lichtregelung"
             android:id="@+id/textView3"
-            android:layout_above="@+id/remove"
-            android:layout_alignStart="@+id/light_active" />
+            android:layout_below="@+id/motion_inactive"
+            android:layout_alignStart="@+id/motion_inactive" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -115,8 +114,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Bewegungserkennung"
             android:id="@+id/textView4"
-            android:layout_above="@+id/down"
-            android:layout_alignStart="@+id/motion_active" />
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/motion_active"
+            android:layout_marginTop="24dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -124,8 +124,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Select Device"
             android:id="@+id/textView5"
-            android:layout_above="@+id/up"
-            android:layout_alignStart="@+id/down" />
+            android:layout_alignTop="@+id/textView4"
+            android:layout_alignStart="@+id/textView6" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -133,7 +133,16 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Adressierung"
             android:id="@+id/textView6"
-            android:layout_above="@+id/assign"
+            android:layout_below="@+id/next"
+            android:layout_alignStart="@+id/start_adress" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="         EXIT          "
+            android:id="@+id/exit"
+            android:layout_marginTop="24dp"
+            android:layout_below="@+id/start_adress"
             android:layout_alignStart="@+id/start_adress" />
 
 
@@ -144,5 +153,6 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView2"
+
         android:layout_gravity="center_vertical" />
 </LinearLayout>
