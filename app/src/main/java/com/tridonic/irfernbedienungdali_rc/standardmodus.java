@@ -48,6 +48,7 @@ public class standardmodus extends Activity {
 
 
         addLayer();
+        //Context an IR Class übergeben.
         final Context context = this.getApplicationContext();
         ir.transmitContext(context);
 

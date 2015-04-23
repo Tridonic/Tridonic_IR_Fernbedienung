@@ -2,11 +2,14 @@ package com.tridonic.irfernbedienungdali_rc;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
@@ -14,16 +17,87 @@ import java.util.List;
 
 
 public class programmiermodus extends Activity {
-    public ir_send_command ir = new ir_send_command();
+
+    public commands command = new commands();
     public Spinner spinner;
+    public Button previous,next,auto,save0,save1,up,down,onoff;
+    public ir_send_command ir = new ir_send_command();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.programmiermodus);
 
-        // spinner = (Spinner) findViewById(R.id.layer_chooser);
-        // addLayer();
+        //Context an IR Class übergeben
+        final Context context = this.getApplicationContext();
+        ir.transmitContext(context);
+
+        //------------------------------------------------------
+        //Zuweisung aller Buttons
+        auto    = (Button) findViewById(R.id.auto);
+        save1   = (Button) findViewById(R.id.save1);
+        save0   = (Button) findViewById(R.id.save0);
+        up   = (Button) findViewById(R.id.up);
+        down    = (Button) findViewById(R.id.down);
+        next    = (Button) findViewById(R.id.next);
+        previous= (Button) findViewById(R.id.previous);
+        onoff   = (Button) findViewById(R.id.onoff);
+        //------------------------------------------------------
+
+        auto.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,4);
+                ir.send(pattern);
+            }
+        });
+        save1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,6);
+                ir.send(pattern);
+            }
+        });
+
+        save0.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,5);
+                ir.send(pattern);
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,7);
+                ir.send(pattern);
+            }
+        });
+
+        previous.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,11);
+                ir.send(pattern);
+            }
+        });
+
+        onoff.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,1);
+                ir.send(pattern);
+            }
+        });
+
+        up.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,2);
+                ir.send(pattern);
+            }
+        });
+
+        down.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                int[] pattern = command.getcommands(17,3);
+                ir.send(pattern);
+            }
+        });
 
     }
 

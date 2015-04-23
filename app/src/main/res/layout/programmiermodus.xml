@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="&lt;"
-            android:id="@+id/prev_group"
+            android:id="@+id/previous"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_alignParentTop="true"
@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=">"
-            android:id="@+id/next_group"
+            android:id="@+id/next"
             android:layout_marginRight="20dp"
             android:layout_above="@+id/auto"
             android:layout_alignParentEnd="true" />
@@ -32,25 +32,25 @@
             android:layout_height="wrap_content"
             android:text="   Automatik   "
             android:id="@+id/auto"
-            android:layout_below="@+id/prev_group"
-            android:layout_alignStart="@+id/prev_group"
+            android:layout_below="@+id/previous"
+            android:layout_alignStart="@+id/previous"
             android:layout_marginTop="49dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" Save scene 0 "
-            android:id="@+id/save_scene0"
+            android:id="@+id/save0"
             android:layout_below="@+id/auto"
-            android:layout_alignStart="@+id/save_scene1"
+            android:layout_alignStart="@+id/save1"
             android:layout_marginTop="49dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Save Scene 1 "
-            android:id="@+id/save_scene1"
-            android:layout_below="@+id/save_scene0"
+            android:text=" save svene 1 "
+            android:id="@+id/save1"
+            android:layout_below="@+id/save0"
             android:layout_alignStart="@+id/auto"
             android:layout_marginTop="49dp"/>
 
@@ -60,22 +60,22 @@
             android:text="      Dimm Up      "
             android:id="@+id/up"
             android:layout_alignTop="@+id/auto"
-            android:layout_alignEnd="@+id/next_group" />
+            android:layout_alignEnd="@+id/next" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="   Dimm Down   "
-            android:id="@+id/previous"
-            android:layout_alignTop="@+id/save_scene1"
-            android:layout_alignStart="@+id/button" />
+            android:id="@+id/down"
+            android:layout_alignTop="@+id/save1"
+            android:layout_alignStart="@+id/onoff" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="       ON/OFF        "
-            android:id="@+id/button"
-            android:layout_alignTop="@+id/save_scene0"
+            android:id="@+id/onoff"
+            android:layout_alignTop="@+id/save0"
             android:layout_alignStart="@+id/up" />
 
         <TextView
@@ -84,8 +84,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Select Group"
             android:id="@+id/textView7"
-            android:layout_above="@+id/next_group"
-            android:layout_alignStart="@+id/prev_group" />
+            android:layout_above="@+id/next"
+            android:layout_alignStart="@+id/previous" />
 
     </RelativeLayout>
 </LinearLayout>
