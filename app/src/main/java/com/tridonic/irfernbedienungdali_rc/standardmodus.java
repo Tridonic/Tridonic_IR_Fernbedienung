@@ -1,7 +1,9 @@
 package com.tridonic.irfernbedienungdali_rc;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,7 +30,7 @@ public class standardmodus extends Activity {
         setContentView(R.layout.standardmodus);
 
         //------------------------------------------------------
-        //Zuweisung aller Buttons
+        //Zuweisung alle Buttons
         spinner = (Spinner) findViewById(R.id.layer_chooser);
         direct100 = (Button) findViewById(R.id.direct100);
         direct50 = (Button) findViewById(R.id.direct50);
@@ -42,6 +44,8 @@ public class standardmodus extends Activity {
         up = (Button) findViewById(R.id.up);
         down = (Button) findViewById(R.id.previous);
         //--------------------------------------------------
+
+
 
         addLayer();
         final Context context = this.getApplicationContext();
@@ -170,6 +174,14 @@ public class standardmodus extends Activity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if(id == R.id.action_help){
+            alertView("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.","Hilfe");
+            return true;
+        }
+        if(id == R.id.action_ueber){
+            alertView("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.","Über");
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -186,5 +198,20 @@ public class standardmodus extends Activity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
+    }
+
+    private void alertView( String message, String title) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(standardmodus.this);
+
+        dialog.setTitle(title)
+                .setMessage(message)
+//  .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+//      public void onClick(DialogInterface dialoginterface, int i) {
+//          dialoginterface.cancel();
+//          }})
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+                    }
+                }).show();
     }
 }

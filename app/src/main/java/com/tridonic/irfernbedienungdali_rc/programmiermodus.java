@@ -1,6 +1,8 @@
 package com.tridonic.irfernbedienungdali_rc;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,5 +63,28 @@ public class programmiermodus extends Activity {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(dataAdapter);
 
+    }
+
+    //On resume wird aufgerufen, wenn die activity wider in den Vordergrud gebracht wird.
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which){
+                    case DialogInterface.BUTTON_POSITIVE:
+                        //Yes button clicked
+                        break;
+
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        MainActivity.mTabHost.setCurrentTab(0);
+                        break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(programmiermodus.this);
+        builder.setMessage("Die Funktionen im Programmiermodus können das System ungewollt modifizieren und ist nur für fortgeschrittene Benutzer geeignet.\n\nWollen sie fortfahren?").setTitle("Achtung!").setPositiveButton("Ja", dialogClickListener)
+                .setNegativeButton("Nein", dialogClickListener).show();
     }
 }

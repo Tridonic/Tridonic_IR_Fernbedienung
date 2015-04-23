@@ -26,7 +26,7 @@ public class MainActivity extends TabActivity {
     private Menu menu;
 
     public float lastX;
-    public TabHost mTabHost;
+    public static TabHost mTabHost;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,8 +37,15 @@ public class MainActivity extends TabActivity {
         //set up a Tab host with 2 tabs, each tab has his own activity. 1: MainActivity 2:settings
         mTabHost = getTabHost();
         mTabHost.getTabWidget().setBackgroundColor(getResources().getColor(R.color.action_bar_color));
-        getActionBar().setElevation(0);
-        mTabHost.getTabWidget().setElevation(15);
+
+
+        //Überprüft das API level. wird nur ausgeführt wenn das app auf einem Gerät mit API level grösser als 19 läuft
+        if(Integer.valueOf(android.os.Build.VERSION.SDK) > 19){
+            //Setzt die schatten der Action bars
+            getActionBar().setElevation(0);
+            mTabHost.getTabWidget().setElevation(15);
+        }
+
         //Creates the different tabs. Add new Tab like below:
         mTabHost.addTab(mTabHost.newTabSpec("Standard").setIndicator("Standard").setContent(new Intent(this  ,standardmodus.class )));
         mTabHost.addTab(mTabHost.newTabSpec("Installation").setIndicator("Installation").setContent(new Intent(this ,installationsmodus.class )));
