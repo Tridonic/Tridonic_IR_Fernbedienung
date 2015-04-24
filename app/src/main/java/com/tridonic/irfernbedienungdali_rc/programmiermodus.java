@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,6 +25,7 @@ public class programmiermodus extends Activity {
     public Spinner spinner;
     public Button previous,next,auto,save0,save1,up,down,onoff;
     public ir_send_command ir = new ir_send_command();
+    public boolean hilfeAktiv = false;      //Aktivität von hilfe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,56 +50,88 @@ public class programmiermodus extends Activity {
 
         auto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,4);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 4);
+                    ir.send(pattern);
+                }
             }
         });
         save1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,6);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 6);
+                    ir.send(pattern);
+                }
             }
         });
 
         save0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,5);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 5);
+                    ir.send(pattern);
+                }
             }
         });
 
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,7);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 7);
+                    ir.send(pattern);
+                }
             }
         });
 
         previous.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,11);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 11);
+                    ir.send(pattern);
+                }
             }
         });
 
         onoff.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,1);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 1);
+                    ir.send(pattern);
+                }
             }
         });
 
         up.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,2);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 2);
+                    ir.send(pattern);
+                }
             }
         });
 
         down.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                int[] pattern = command.getcommands(17,3);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int[] pattern = command.getcommands(17, 3);
+                    ir.send(pattern);
+                }
             }
         });
 
@@ -120,6 +156,9 @@ public class programmiermodus extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
+            Intent myIntent = new Intent(programmiermodus.this, UserSettingActivity.class);
+            programmiermodus.this.startActivity(myIntent);
             return true;
         }
 
@@ -157,8 +196,23 @@ public class programmiermodus extends Activity {
                 }
             }
         };
+        //holt die Einstllungen
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(programmiermodus.this);
         builder.setMessage("Die Funktionen im Programmiermodus können das System ungewollt modifizieren und ist nur für fortgeschrittene Benutzer geeignet.\n\nWollen sie fortfahren?").setTitle("Achtung!").setPositiveButton("Ja", dialogClickListener)
                 .setNegativeButton("Nein", dialogClickListener).show();
+    }
+    private void alertView( String message, String title) {
+        AlertDialog.Builder dialog = new AlertDialog.Builder(programmiermodus.this);
+
+        dialog.setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialoginterface, int i) {
+                    }
+                }).show();
     }
 }

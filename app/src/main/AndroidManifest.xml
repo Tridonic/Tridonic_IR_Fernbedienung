@@ -26,6 +26,7 @@
         <activity            android:name=".installationsmodus"            android:label="@string/app_name" >        </activity>
         <activity            android:name=".programmiermodus"            android:label="@string/app_name" >        </activity>
         <activity            android:name=".standardmodus"            android:label="@string/app_name" >        </activity>
+        <activity            android:name=".UserSettingActivity"            android:label="@string/app_name" >        </activity>
 
 
     </application>

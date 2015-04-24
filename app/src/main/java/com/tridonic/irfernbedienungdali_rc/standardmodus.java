@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +26,7 @@ public class standardmodus extends Activity {
     public Button direct100,direct50,direct25,direct12,direct6,auto,szene0,szene1,onoff,up,down;    //Variabeln für Alle Buttons die verwendet werden im Layout
     public final int K = 461;   //461ms Kurze Dauer
     public final int L = 923;   //923 Lange Dauers
+    public boolean hilfeAktiv = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,101 +59,130 @@ public class standardmodus extends Activity {
         direct100.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
-
-                int[] pattern = command.getcommands(layer,7);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 7);
+                    ir.send(pattern);
+                }
 
             }
         });
         direct50.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
 
-                int[] pattern = command.getcommands(layer,8);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 8);
+                    ir.send(pattern);
+                }
             }
         });
         direct25.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
 
-                int[] pattern = command.getcommands(layer,9);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 9);
+                    ir.send(pattern);
+                }
             }
         });
         direct12.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
 
-                int[] pattern = command.getcommands(layer,10);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 10);
+                    ir.send(pattern);
+                }
             }
         });
         direct6.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
 
-                int[] pattern = command.getcommands(layer,11);
-                ir.send(pattern);
+                    int[] pattern = command.getcommands(layer, 11);
+                    ir.send(pattern);
+                }
             }
         });
         onoff.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
 
-                int[] pattern = command.getcommands(layer,1);
-                ir.send(pattern);
+                    int[] pattern = command.getcommands(layer, 1);
+                    ir.send(pattern);
+                }
             }
         });
         up.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
 
-                int[] pattern = command.getcommands(layer,2);
-                ir.send(pattern);
+                    int[] pattern = command.getcommands(layer, 2);
+                    ir.send(pattern);
+                }
             }
         });
         down.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
-
-                int[] pattern = command.getcommands(layer,3);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 3);
+                    ir.send(pattern);
+                }
             }
         });
         auto.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
-
-                int[] pattern = command.getcommands(layer,4);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 4);
+                    ir.send(pattern);
+                }
             }
         });
         szene0.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
-
-                int[] pattern = command.getcommands(layer,5);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 5);
+                    ir.send(pattern);
+                }
             }
         });
         szene1.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-                int layer = (int)spinner.getSelectedItemId()+1;
-
-                int[] pattern = command.getcommands(layer,6);
-                ir.send(pattern);
+                if(hilfeAktiv == true){
+                    alertView("Hilfe hier anzeigen","Hilfe");
+                }else {
+                    int layer = (int) spinner.getSelectedItemId() + 1;
+                    int[] pattern = command.getcommands(layer, 6);
+                    ir.send(pattern);
+                }
             }
         });
     }
@@ -173,14 +206,8 @@ public class standardmodus extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
-        }
-        if(id == R.id.action_help){
-            alertView("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.","Hilfe");
-            return true;
-        }
-        if(id == R.id.action_ueber){
-            alertView("Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.","Über");
+            Intent myIntent = new Intent(standardmodus.this, UserSettingActivity.class);
+            standardmodus.this.startActivity(myIntent);
             return true;
         }
 
@@ -214,5 +241,12 @@ public class standardmodus extends Activity {
                     public void onClick(DialogInterface dialoginterface, int i) {
                     }
                 }).show();
+    }
+
+    public void onResume() {
+        super.onResume();
+        //holt die Einstllungen
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
     }
 }

@@ -6,5 +6,12 @@
     <color
         name="notification_bar"
         >#0097D3</color>
+
+    <color
+        name="action_bar_color_help"
+        >#ee4d2e</color>
+    <color
+        name="notification_bar_help"
+        >#0097D3</color>
 </resources>
 

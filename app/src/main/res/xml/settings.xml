@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/pref_modi" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefProgrammier"
+            android:summary="@string/pref_modi_programmier"
+            android:title="@string/pref_name_modi_programmier" >
+        </CheckBoxPreference>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefInstallation"
+            android:summary="@string/pref_modi_installation"
+            android:title="@string/pref_name_modi_installation" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="@string/private_settings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="prefSendBugreport"
+            android:summary="@string/pref_send_bugreport"
+            android:title="@string/pref_name_send_bugreport" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+
+    
+    <PreferenceCategory android:title="@string/advanced_settings" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="prefHelpMode"
+            android:summary="@string/pref_Help_Mode"
+            android:title="@string/pref_name_Help_Mode" >
+        </CheckBoxPreference>
+        <Preference
+            android:summary="@string/pref_version"
+            android:title="@string/pref_name_version" >
+        </Preference>
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

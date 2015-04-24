@@ -1,8 +1,45 @@
 <resources>
-    <string name="app_name">DALI-RC</string>
+    <string name="app_name">DALI-RC IR Fernbedienung</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Einstellungen</string>
     <string name="action_help">Help</string>
     <string name="action_ueber">Über</string>
+    <string name="help_check">Hilfe anzeigen</string>
+
+
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+
+    <string name="pref_send_report">Send crash reports</string>
+    <string name="pref_send_report_summary">Helps to fix bugs</string>
+    <string name="pref_sync_frequency">Sync frequency</string>
+    <string name="pref_sync_frequency_summary">Set the sync frequency</string>
+    <string name="pref_user_name">Set username</string>
+    <string name="pref_user_name_summary">Set your username</string>
+
+    <string name="pref_name_modi_standard">Standard Modus</string>
+    <string name="pref_name_modi_programmier">Programmier Modus</string>
+    <string name="pref_name_modi_installation">Installations Modus</string>
+    <string name="pref_name_send_bugreport">Anonyme Bugreports</string>
+    <string name="pref_name_Help_Mode">Hilfe</string>
+    <string name="pref_name_version">Version</string>
+
+
+
+    <string name="pref_modi_standard">Standard Modus anzeigen</string>
+    <string name="pref_modi_programmier">Programmier Modus anzeigen</string>
+    <string name="pref_modi_installation">Installations Modus anzeigen</string>
+    <string name="pref_send_bugreport">Sende anonyme Bugreports wenn ein Fehler auftritt</string>
+    <string name="pref_Help_Mode">Aktiviert den Hilfe Modus</string>
+    <string name="pref_version">Beta Version 1.0</string>
+
+
+    <string name="advanced_settings">Erweiterte Einstellungen</string>
+    <string name="pref_modi">Modi</string>
+    <string name="private_settings">Privatsphäre</string>
+
+
+
 </resources>
