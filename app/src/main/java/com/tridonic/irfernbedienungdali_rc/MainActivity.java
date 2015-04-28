@@ -60,8 +60,6 @@ public class MainActivity extends TabActivity {
                 getWindow().setStatusBarColor(getResources().getColor(R.color.action_bar_color_help));
             }
 
-            //bar.setBackgroundDrawable(new ColorDrawable(R.color.action_bar_color_help));
-
         }else{
             ActionBar bar = getActionBar();
             bar.setTitle("DALI-RC IR Fernbedienung");
@@ -71,7 +69,6 @@ public class MainActivity extends TabActivity {
             }
             //bar.setBackgroundDrawable(new ColorDrawable(R.color.action_bar_color));
         }
-
 
 
         mTabHost = getTabHost();

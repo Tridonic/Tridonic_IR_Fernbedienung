@@ -26,7 +26,6 @@ public class ir_send_command {
         }
         return answere;
     }
-
     public void send(int[] pattern){
         //Sends the given command with a freq of 36000 Hz
         mCIR.transmit(36000,pattern);
