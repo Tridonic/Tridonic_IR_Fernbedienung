@@ -60,7 +60,7 @@ public class standardmodus extends Activity {
 
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Direct100),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 7);
@@ -73,7 +73,7 @@ public class standardmodus extends Activity {
             public void onClick(View v) {
 
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Direct50),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 8);
@@ -85,7 +85,7 @@ public class standardmodus extends Activity {
             public void onClick(View v) {
 
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Direct25),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 9);
@@ -97,7 +97,7 @@ public class standardmodus extends Activity {
             public void onClick(View v) {
 
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Direct12),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 10);
@@ -108,7 +108,7 @@ public class standardmodus extends Activity {
         direct6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Direct6),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
 
@@ -120,7 +120,7 @@ public class standardmodus extends Activity {
         onoff.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.on_off),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
 
@@ -132,7 +132,7 @@ public class standardmodus extends Activity {
         up.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.up),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
 
@@ -144,7 +144,7 @@ public class standardmodus extends Activity {
         down.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.down),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 3);
@@ -155,7 +155,7 @@ public class standardmodus extends Activity {
         auto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Automatik_),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 4);
@@ -166,7 +166,7 @@ public class standardmodus extends Activity {
         szene0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Szene0),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 5);
@@ -177,7 +177,7 @@ public class standardmodus extends Activity {
         szene1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Szene1),"Hilfe");
                 }else {
                     int layer = (int) spinner.getSelectedItemId() + 1;
                     int[] pattern = command.getcommands(layer, 6);

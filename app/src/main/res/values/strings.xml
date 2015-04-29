@@ -40,6 +40,39 @@
     <string name="pref_modi">Modi</string>
     <string name="private_settings">Privatsphäre</string>
 
+    //Help Ressourcen
+    <string name="Direct100">Setzt die aktuelle Helligkeit der ausgewählten Gruppe auf 100%.</string>
+    <string name="Direct50">Setzt die aktuelle Helligkeit der ausgewählten Gruppe auf 50%.</string>
+    <string name="Direct25">Setzt die aktuelle Helligkeit der ausgewählten Gruppe auf 25%.</string>
+    <string name="Direct12">Setzt die aktuelle Helligkeit der ausgewählten Gruppe auf 12%.</string>
+    <string name="Direct6">Setzt die aktuelle Helligkeit der ausgewählten Gruppe auf 6%.</string>
+    <string name="on_off">Schalted die aktuelle Gruppe Ein bzw Aus.</string>
+    <string name="up">Dimmt die aktuelle Gruppe um einen Schritt hoch.</string>
+    <string name="down">Dimmt die aktuelle gruppe um einen Schritt runter.</string>
+    <string name="Automatik_">Setzt die Lichtregelung auf Automaik um.</string>
+    <string name="Szene0">Ruft Szene 0 auf.</string>
+    <string name="Szene1">Ruft Szene 1 auf.</string>
+
+    <string name="bewegung_Active">Aktiviert die Bewegungserkennung des Sensors.</string>
+    <string name="bewegung_Only_off">	Schalted das Licht nach gewisser zeit ohne Bewegung aus. Das licht wird bei neuer bewegung aber nicht eingeschalted.</string>
+    <string name="bewegung_Inactive">Deaktiviert die Bewegungserkennung des Sensors.</string>
+    <string name="licht_active">Aktiviert die Lichtregelung des Sensors.</string>
+    <string name="licht_inactive">Deaktiviert die Lichtregelung des Sensors.</string>
+    <string name="previous_device">Springe zum vohrigen Gerät.</string>
+    <string name="next_device">Springe zum nächsten Gerät.</string>
+    <string name="assign">Weist das ausgewählte gheröt dem Sensor zu.</string>
+    <string name="remove">Entfernt das ausgewählte gerät von dem Sensor.</string>
+    <string name="Start_Adress">Adressiert das komplette system neu.</string>
+    <string name="Exit">Verlasse den Installations modus:</string>
+
+    <string name="next_group">Springe zur nächsten Gruppe.</string>
+    <string name="previous_group">Springe zur vorhigen Gruppe.</string>
+    <string name="Automatik">INSERT HERE</string>
+    <string name="save_scene0">speichert den aktuellen zustand als Szene 0.</string>
+    <string name="save_scene1">speichert den aktuellen zustand als Szene 1.</string>
+    <string name="Dimm_up">Dimmt die aktuell ausgewählte gruppe hoch.</string>
+    <string name="Dimm_down">Dimmt die aktuell ausgewählte Gruppe runter.</string>
+
 
 
 </resources>

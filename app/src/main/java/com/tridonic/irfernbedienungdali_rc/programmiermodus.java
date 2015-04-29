@@ -51,7 +51,7 @@ public class programmiermodus extends Activity {
         auto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Automatik_),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 4);
                     ir.send(pattern);
@@ -61,7 +61,7 @@ public class programmiermodus extends Activity {
         save1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.save_scene1),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 6);
                     ir.send(pattern);
@@ -72,7 +72,7 @@ public class programmiermodus extends Activity {
         save0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.save_scene0),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 5);
                     ir.send(pattern);
@@ -83,7 +83,7 @@ public class programmiermodus extends Activity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.next_group),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 7);
                     ir.send(pattern);
@@ -94,7 +94,7 @@ public class programmiermodus extends Activity {
         previous.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.previous_group),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 11);
                     ir.send(pattern);
@@ -105,7 +105,7 @@ public class programmiermodus extends Activity {
         onoff.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.on_off),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 1);
                     ir.send(pattern);
@@ -116,7 +116,7 @@ public class programmiermodus extends Activity {
         up.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.up),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 2);
                     ir.send(pattern);
@@ -127,7 +127,7 @@ public class programmiermodus extends Activity {
         down.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.down),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(17, 3);
                     ir.send(pattern);

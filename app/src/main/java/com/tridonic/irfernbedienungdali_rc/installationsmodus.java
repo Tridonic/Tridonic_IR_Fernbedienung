@@ -56,7 +56,7 @@ public class installationsmodus extends Activity {
         motion_active.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.bewegung_Active),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 7);
                     ir.send(pattern);
@@ -68,7 +68,7 @@ public class installationsmodus extends Activity {
         motion_inactive.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.bewegung_Inactive),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 9);
                     ir.send(pattern);
@@ -79,7 +79,7 @@ public class installationsmodus extends Activity {
         motion_onlyoff.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.bewegung_Only_off),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 8);
                     ir.send(pattern);
@@ -91,7 +91,7 @@ public class installationsmodus extends Activity {
         light_active.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.licht_active),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 1);
                     ir.send(pattern);
@@ -103,7 +103,7 @@ public class installationsmodus extends Activity {
         light_inactive.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.licht_inactive),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 11);
                     ir.send(pattern);
@@ -115,7 +115,7 @@ public class installationsmodus extends Activity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.next_device),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 2);
                     ir.send(pattern);
@@ -127,7 +127,7 @@ public class installationsmodus extends Activity {
         previous.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.previous_device),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 3);
                     ir.send(pattern);
@@ -139,7 +139,7 @@ public class installationsmodus extends Activity {
         assign.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.assign),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 4);
                     ir.send(pattern);
@@ -152,7 +152,7 @@ public class installationsmodus extends Activity {
             public void onClick(View v) {
 
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.remove),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 5);
                     ir.send(pattern);
@@ -164,7 +164,7 @@ public class installationsmodus extends Activity {
         start_adress.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Start_Adress),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 6);
                     ir.send(pattern);
@@ -177,7 +177,7 @@ public class installationsmodus extends Activity {
 
             public void onClick(View v) {
                 if(hilfeAktiv == true){
-                    alertView("Hilfe hier anzeigen","Hilfe");
+                    alertView(getResources().getString(R.string.Exit),"Hilfe");
                 }else {
                     int[] pattern = command.getcommands(18, 1);
                     ir.send(pattern);
