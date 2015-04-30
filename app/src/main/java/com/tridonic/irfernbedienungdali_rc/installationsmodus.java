@@ -1,4 +1,20 @@
 package com.tridonic.irfernbedienungdali_rc;
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main Class File:  MainActivity.java
+// File:             installationsmodus.java
+// Date:             30.04.2015
+//
+// Author:           Dario Duff Copyright (2015). All rights reserved.
+//
+// Layout:           installationsmodus.xml
+//
+// Function:
+// Java File für den installations Modus. Wird in dem Tab Host MainActivity.java gehosted
+// Hiermit können Einstellungen am Verhalten des sensors vorgenommen werden.
+// Zusätzlich können auch gruppen erstellt werden und das Komplette system neu adressieren.
+//
+//////////////////////////// 287 columns wide //////////////////////////////////
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,6 +33,8 @@ import android.widget.Spinner;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 
 public class installationsmodus extends Activity {
@@ -266,7 +284,4 @@ public class installationsmodus extends Activity {
                     }
                 }).show();
     }
-
-
-
 }

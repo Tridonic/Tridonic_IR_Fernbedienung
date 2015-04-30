@@ -1,4 +1,18 @@
 package com.tridonic.irfernbedienungdali_rc;
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main Class File:  MainActivity.java
+// File:             UserSettingsActivity.java
+// Date:             30.04.2015
+//
+// Author:           Dario Duff Copyright (2015). All rights reserved.
+//
+// Layout:           keines
+//
+// Function:
+// Zuständig für die Einstellungen.
+//
+//////////////////////////// 51 columns wide //////////////////////////////////
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

@@ -1,10 +1,18 @@
 package com.tridonic.irfernbedienungdali_rc;
-//File: 	tabhost.java
-//design: 	none
-//date:		5.08.14
-//(c) 2014 by Dario Duff
-//Tab host file. Hosts the tabs for the different activity's. 
-////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main Class File:  MainActivity.java
+// File:             MainActivity.java
+// Date:             30.04.2015
+//
+// Author:           Dario Duff Copyright (2015). All rights reserved.
+//
+// Layout:           keines
+//
+// Function:
+// Hosted den Tabhost jenachdem welche Tabs in den EInstellungen ausgewählt wurden.
+//
+//////////////////////////// 123 columns wide //////////////////////////////////
 
 import android.app.ActionBar;
 import android.app.TabActivity;
@@ -18,13 +26,6 @@ import android.view.WindowManager;
 import android.widget.TabHost;
 import android.widget.TextView;
 
-
-//File: 	MainActivity.java
-//design: 	activity_main.xml
-//date:		22.05.14
-//(c) 2014 by Dario Duff
-//Main form, allows to connect to Bluetooth device
-////////////////////////////////////////////////////////////////////////////////
 public class MainActivity extends TabActivity {
     private Menu menu;
 
@@ -120,5 +121,3 @@ public class MainActivity extends TabActivity {
 
     }
 }
-
-

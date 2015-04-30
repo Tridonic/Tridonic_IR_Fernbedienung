@@ -1,16 +1,28 @@
 package com.tridonic.irfernbedienungdali_rc;
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main Class File:  MainActivity.java
+// File:             ir_send.command.java
+// Date:             30.04.2015
+//
+// Author:           Dario Duff Copyright (2015). All rights reserved.
+//
+// Layout:           keines
+//
+// Function:
+// zuständig für das versenden von IR Befehlen. Bevor etwas
+// versendet werden kann, muss der Context mit transmitContext(Context context);
+// übergeben werden. von Da an kann ban Befehle versenden.
+//
+//////////////////////////// 66 columns wide //////////////////////////////////
 
 import android.content.Context;
 import android.hardware.ConsumerIrManager;
-
-/**
- * Created by dario.duff on 25.02.2015.
- * Class to ckeck IR emitter and transmit commands with 36kHz
- */
 public class ir_send_command {
     protected Context context;
     protected ConsumerIrManager mCIR;
 
+    //Überprüfft ob ein IR Emitter verfügbar ist. gibt den Frequenzbereich zurück oder "No IR transmitter found"
     public void transmitContext(Context context){
         //saves context from Application
         this.context = context.getApplicationContext();
@@ -51,7 +63,4 @@ public class ir_send_command {
         response = b.toString() + " Hz.";
         return response;
     }
-
-
-
 }

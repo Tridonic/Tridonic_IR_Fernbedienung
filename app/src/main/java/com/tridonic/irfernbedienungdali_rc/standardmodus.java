@@ -1,4 +1,20 @@
 package com.tridonic.irfernbedienungdali_rc;
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main Class File:  MainActivity.java
+// File:             standardmodus.java
+// Date:             30.04.2015
+//
+// Author:           Dario Duff Copyright (2015). All rights reserved.
+//
+// Layout:           standardmodus.xml
+//
+// Function:
+// Java File für den standard Modus. Wird in dem Tab Host MainActivity.java gehosted
+// Es kann zwishen 16 Layers gewählt werden an welche Gruppe die Befehle gesendet werden.
+// Die Befehle werden über ir_send_command.java versendet.
+//
+//////////////////////////// 268 columns wide //////////////////////////////////
 
 import android.app.Activity;
 import android.app.AlertDialog;

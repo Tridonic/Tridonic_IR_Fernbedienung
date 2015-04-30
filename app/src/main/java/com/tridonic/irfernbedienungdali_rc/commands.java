@@ -1,9 +1,19 @@
 package com.tridonic.irfernbedienungdali_rc;
-
-/**
- * Created by dario.duff on 20.04.2015.
- * Das File beinhalted alle Commands die verwendet werden
- */
+///////////////////////////////////////////////////////////////////////////////
+//
+// Main Class File:  MainActivity.java
+// File:             programmiermodus.java
+// Date:             30.04.2015
+//
+// Author:           Dario Duff Copyright (2015). All rights reserved.
+//
+// Layout:           programmiermodus.xml
+//
+// Function:
+// Beinhaltet alle IR Befehle die verwednet werden. Beinhalted insgesammt 195 Befehle.
+// Abgerufen werden sie mit der Layer nummer und die Nummer von dem dazugehörigen Befehl
+//
+//////////////////////////// 358 columns wide //////////////////////////////////
 public class commands {
     public final int K = 461;   //461ms Kurze Dauer
     public final int L = 923;   //923 Lange Dauers
