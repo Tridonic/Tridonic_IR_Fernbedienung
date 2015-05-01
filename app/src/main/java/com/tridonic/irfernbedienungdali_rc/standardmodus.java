@@ -233,8 +233,9 @@ public class standardmodus extends Activity {
     public void addLayer() {
         //Fügt die Layers hinzu
         List<String> list = new ArrayList<String>();
-        for(int i=1;i<17;i++){
-            list.add("Layer "+i);
+        list.add("Broadcast");
+        for(int i=0;i<16;i++){
+            list.add("Gruppe "+i);
         }
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
