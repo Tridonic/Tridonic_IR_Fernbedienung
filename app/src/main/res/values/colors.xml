@@ -2,10 +2,13 @@
 <resources>
     <color
         name="action_bar_color"
-        >#009DDF</color>
+        >#00519C</color>
+    //009DDF
     <color
         name="notification_bar"
-        >#0097D3</color>
+        >#004887</color>
+
+    //0097D3
 
     <color
         name="action_bar_color_help"

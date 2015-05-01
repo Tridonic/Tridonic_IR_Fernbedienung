@@ -270,11 +270,12 @@ public class installationsmodus extends Activity {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
 
+
         AlertDialog.Builder builder = new AlertDialog.Builder(installationsmodus.this);
-        builder.setMessage("Die Funktionen im Installationsmodus können das System ungewollt beschädigen. \n\nWollen sie fortfahren?").setTitle("Achtung!").setPositiveButton("Ja", dialogClickListener)
+        builder.setMessage("Die Funktionen im Installationsmodus können das System ungewollt modifizieren und ist nur für fortgeschrittene Benutzer geeignet.\n\nWollen sie fortfahren?").setTitle("Achtung!").setPositiveButton("Ja", dialogClickListener)
                 .setNegativeButton("Nein", dialogClickListener).show();
     }
-    private void alertView( String message, String title) {
+    public void alertView( String message, String title) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(installationsmodus.this);
 
         dialog.setTitle(title)

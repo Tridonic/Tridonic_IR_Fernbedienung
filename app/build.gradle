@@ -6,9 +6,9 @@ android {
 
     defaultConfig {
         applicationId "com.tridonic.irfernbedienungdali_rc"
-        minSdkVersion 19
+        minSdkVersion 20
         targetSdkVersion 21
-        versionCode 1
+        versionCode 14
         versionName "Beta 1.0"
     }
     buildTypes {

@@ -38,6 +38,13 @@
             android:summary="@string/pref_version"
             android:title="@string/pref_name_version" >
         </Preference>
+        <Preference
+            android:summary="Made in Switzerland"
+            android:key="madein"
+            android:title=""
+            android:gravity="center"
+            android:textSize="20sp">
+        </Preference>
     </PreferenceCategory>
 
 

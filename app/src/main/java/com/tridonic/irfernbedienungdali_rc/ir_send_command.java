@@ -16,7 +16,9 @@ package com.tridonic.irfernbedienungdali_rc;
 //
 //////////////////////////// 66 columns wide //////////////////////////////////
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.hardware.ConsumerIrManager;
 public class ir_send_command {
     protected Context context;
@@ -39,8 +41,8 @@ public class ir_send_command {
         return answere;
     }
     public void send(int[] pattern){
-        //Sends the given command with a freq of 36000 Hz
-        mCIR.transmit(36000,pattern);
+            //Sends the given command with a freq of 36000 Hz
+            mCIR.transmit(36000, pattern);
     }
 
     public String getFrequencies(){

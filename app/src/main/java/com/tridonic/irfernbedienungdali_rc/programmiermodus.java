@@ -14,7 +14,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // Dient dazu um die beiden Szenen 0 und 1 zu Programmieren.
 // Die Befehle werden über ir_send_command.java versendet.
 //
-//////////////////////////// 235 columns wide //////////////////////////////////
+//////////////////////////// 217 columns wide //////////////////////////////////
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -27,12 +27,8 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class programmiermodus extends Activity {
@@ -179,19 +175,6 @@ public class programmiermodus extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void addLayer() {
-        List<String> list = new ArrayList<String>();
-        list.add("layer 1");
-        list.add("layer 2");
-        list.add("layer 3");
-
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
-
     }
 
     //On resume wird aufgerufen, wenn die activity wider in den Vordergrud gebracht wird.
