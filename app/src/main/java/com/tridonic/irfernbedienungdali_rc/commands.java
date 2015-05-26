@@ -13,7 +13,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // Beinhaltet alle IR Befehle die verwednet werden. Beinhalted insgesammt 195 Befehle.
 // Abgerufen werden sie mit der Layer nummer und die Nummer von dem dazugehörigen Befehl
 //
-//////////////////////////// 358 columns wide //////////////////////////////////
+//////////////////////////// 343 columns wide //////////////////////////////////
 public class commands {
     public final int K = 461;   //461ms Kurze Dauer
     public final int L = 923;   //923 Lange Dauers
@@ -148,10 +148,8 @@ public class commands {
                     case 4: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,K,K,L,L,K,K,K,}; break;
                     case 5: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,K,K,L,L,L,K,}; break;
                     case 6: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,K,K,L,K,K,L,K}; break;
-                    case 7: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,K,K,L,K,K,K,K,K,
-                    }; break;
-                    case 8: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,L,L,K,K,K,K,K,
-                    }; break;
+                    case 7: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,K,K,L,K,K,K,K,K,}; break;
+                    case 8: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,L,L,K,K,K,K,K,}; break;
                     case 9: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,L,L,K,K,L,K,}; break;
                     case 10: returner = new int[]{2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,L,L,L,L,K,}; break;
                     case 11: returner = new int[]{2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,K,K,L,L,L,L,K,K,K,}; break;
@@ -200,8 +198,6 @@ public class commands {
                     case 6: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,L,L,L,K,K,L,K,}; break;
                     case 7: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,L,L,L,K,K,K,K,K,}; break;
                     case 8: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,L,K,K,L,K,K,K,K,K,}; break;
-
-
                     case 9: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,L,K,K,L,K,K,L,K,}; break;
                     case 10: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,L,K,K,L,L,L,K,K}; break;
                     case 11: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,L,K,K,L,L,K,K,K,}; break;
@@ -210,28 +206,17 @@ public class commands {
 
             case 11:    //Layer 11
                 switch(command){
-                    case 1: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,K,K,K,K,L,K,
-                    }; break;
-                    case 2: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,K,K,L,L,K,
-                    }; break;
-                    case 3: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,K,K,L,K,K,K,
-                    }; break;
-                    case 4: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,K,K,L,L,K,K,K,
-                    }; break;
-                    case 5: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,L,L,L
-                    }; break;
-                    case 6: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,L,K,K,L,K
-                    }; break;
-                    case 7: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,L,K,K,K,K,
-                    }; break;
-                    case 8: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,K,K,K,K,K,
-                    }; break;
-                    case 9: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,K,K,L,
-                    }; break;
-                    case 10: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,L,L,K,K
-                    }; break;
-                    case 11: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,L,K,K,K
-                    }; break;
+                    case 1: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,K,K,K,K,L,K,}; break;
+                    case 2: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,K,K,L,L,K,}; break;
+                    case 3: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,K,K,L,K,K,K,}; break;
+                    case 4: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,K,L,L,K,K,K,K,L,L,K,K,K,}; break;
+                    case 5: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,L,L,L}; break;
+                    case 6: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,L,K,K,L,K};break;
+                    case 7: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,K,K,L,K,K,K,K,}; break;
+                    case 8: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,K,K,K,K,K,}; break;
+                    case 9: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,K,K,L,}; break;
+                    case 10: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,L,L,K,K}; break;
+                    case 11: returner = new int[] {2664,900,K,900,K,K,K,K,K,888,1222,888,K,K,K,K,K,K,K,K,K,K,K,K,L,L,L,L,L,L,L,K,K,K}; break;
                 }
                 break;
 

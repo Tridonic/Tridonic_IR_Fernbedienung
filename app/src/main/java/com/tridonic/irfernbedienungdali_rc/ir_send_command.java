@@ -14,7 +14,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // versendet werden kann, muss der Context mit transmitContext(Context context);
 // übergeben werden. von Da an kann ban Befehle versenden.
 //
-//////////////////////////// 66 columns wide //////////////////////////////////
+//////////////////////////// 68 columns wide //////////////////////////////////
 
 import android.app.AlertDialog;
 import android.content.Context;

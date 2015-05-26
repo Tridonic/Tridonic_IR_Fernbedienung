@@ -12,7 +12,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // Function:
 // Zuständig für die Einstellungen.
 //
-//////////////////////////// 51 columns wide //////////////////////////////////
+//////////////////////////// 81 columns wide //////////////////////////////////
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;

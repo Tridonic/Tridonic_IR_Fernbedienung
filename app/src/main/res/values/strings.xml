@@ -72,7 +72,4 @@
     <string name="save_scene1">speichert den aktuellen zustand als Szene 1.</string>
     <string name="Dimm_up">Dimmt die aktuell ausgewählte gruppe hoch.</string>
     <string name="Dimm_down">Dimmt die aktuell ausgewählte Gruppe runter.</string>
-
-
-
 </resources>

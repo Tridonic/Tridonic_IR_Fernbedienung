@@ -12,7 +12,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // Function:
 // Hosted den Tabhost jenachdem welche Tabs in den EInstellungen ausgewählt wurden.
 //
-//////////////////////////// 123 columns wide //////////////////////////////////
+//////////////////////////// 183 columns wide //////////////////////////////////
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -58,6 +58,7 @@ public class MainActivity extends TabActivity{
 
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -92,32 +93,35 @@ public class MainActivity extends TabActivity{
 
         //Holt die einstellungen und weist sie eienr Variable zu
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean help_active,modiProgrammier,modiInstall;
+        boolean help_active = false,modiProgrammier,modiInstall;
         modiProgrammier = sharedPrefs.getBoolean("prefProgrammier",false);
         modiInstall = sharedPrefs.getBoolean("prefInstallation", false);
         help_active = sharedPrefs.getBoolean("prefHelpMode",false);
-        if(help_active == true) {
+        if((help_active == true)&&Integer.valueOf(android.os.Build.VERSION.SDK) > 19) {
 
-            if(Integer.valueOf(android.os.Build.VERSION.SDK) > 19){
                 ActionBar bar = getActionBar();
+
                 bar.setTitle("DALI RC Hilfe Modus");
                 //change Status Bar color
                 getWindow().setStatusBarColor(getResources().getColor(R.color.action_bar_color_help));
-            }
 
         }else{
             ActionBar bar = getActionBar();
-            bar.setTitle("DALI-RC IR Fernbedienung");
+
             if(Integer.valueOf(android.os.Build.VERSION.SDK) > 19) {
+                bar.setTitle("DALI-RC IR Fernbedienung");
                 //change Status Bar color
                 getWindow().setStatusBarColor(getResources().getColor(R.color.notification_bar));
+
             }
             //bar.setBackgroundDrawable(new ColorDrawable(R.color.action_bar_color));
+
         }
-
-
         mTabHost = getTabHost();
+
+
         mTabHost.getTabWidget().setBackgroundColor(getResources().getColor(R.color.action_bar_color));
+
 
 
 

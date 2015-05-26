@@ -14,7 +14,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // Hiermit können Einstellungen am Verhalten des sensors vorgenommen werden.
 // Zusätzlich können auch gruppen erstellt werden und das Komplette system neu adressieren.
 //
-//////////////////////////// 287 columns wide //////////////////////////////////
+//////////////////////////// 288 columns wide //////////////////////////////////
 
 import android.app.Activity;
 import android.app.AlertDialog;

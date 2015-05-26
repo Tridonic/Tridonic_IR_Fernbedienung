@@ -14,7 +14,7 @@ package com.tridonic.irfernbedienungdali_rc;
 // Es kann zwishen 16 Layers gewählt werden an welche Gruppe die Befehle gesendet werden.
 // Die Befehle werden über ir_send_command.java versendet.
 //
-//////////////////////////// 268 columns wide //////////////////////////////////
+//////////////////////////// 269 columns wide //////////////////////////////////
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,10 +22,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -43,6 +45,8 @@ public class standardmodus extends Activity {
     public final int K = 461;   //461ms Kurze Dauer
     public final int L = 923;   //923 Lange Dauers
     public boolean hilfeAktiv = false;
+    public boolean multiUp = false;
+    public boolean multiDown = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +68,7 @@ public class standardmodus extends Activity {
         up = (Button) findViewById(R.id.up);
         down = (Button) findViewById(R.id.previous);
         //--------------------------------------------------
+
 
 
 
@@ -145,6 +150,50 @@ public class standardmodus extends Activity {
                 }
             }
         });
+
+
+
+        up.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if(multiUp == false){
+                            multiUp = true;
+                            new SendUp().execute();
+                        }
+                        if(hilfeAktiv)
+                            alertView(getResources().getString(R.string.up),"Hilfe");
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        multiUp = false;
+                }
+                return true;
+            }
+        });
+
+        down.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if (multiDown == false) {
+                            multiDown = true;
+                            new SendDown().execute();
+                        }
+                        if (hilfeAktiv)
+                            alertView(getResources().getString(R.string.up), "Hilfe");
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        multiDown = false;
+                }
+                return true;
+            }
+        });
+
+
         up.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(hilfeAktiv == true){
@@ -155,6 +204,9 @@ public class standardmodus extends Activity {
                     int[] pattern = command.getcommands(layer, 2);
                     ir.send(pattern);
                 }
+
+
+
             }
         });
         down.setOnClickListener(new View.OnClickListener() {
@@ -265,5 +317,46 @@ public class standardmodus extends Activity {
         //holt die Einstllungen
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
+    }
+
+    //Async thread fuer das versenden von mehreren befehlen
+    //wird verwendet wenn der buttpn gehalten wird
+    class SendUp extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            while (multiUp && !hilfeAktiv) {
+                int layer = (int) spinner.getSelectedItemId() + 1;
+
+                int[] pattern = command.getcommands(layer, 2);
+                ir.send(pattern);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
+    }
+    //Async thread fuer das versenden von mehreren befehlen
+    //wird verwendet wenn der buttpn gehalten wird
+    class SendDown extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            while (multiDown && !hilfeAktiv) {
+                int layer = (int) spinner.getSelectedItemId() + 1;
+
+                int[] pattern = command.getcommands(layer, 3);
+                ir.send(pattern);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
     }
 }

@@ -22,10 +22,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -38,6 +40,8 @@ public class programmiermodus extends Activity {
     public Button previous,next,auto,save0,save1,up,down,onoff;
     public ir_send_command ir = new ir_send_command();
     public boolean hilfeAktiv = false;      //Aktivität von hilfe
+    public boolean multiUp = false;
+    public boolean multiDown = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,46 @@ public class programmiermodus extends Activity {
         previous= (Button) findViewById(R.id.previous);
         onoff   = (Button) findViewById(R.id.onoff);
         //------------------------------------------------------
+
+        up.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if(multiUp == false){
+                            multiUp = true;
+                            new SendUp().execute();
+                        }
+                        if(hilfeAktiv)
+                            alertView(getResources().getString(R.string.up),"Hilfe");
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        multiUp = false;
+                }
+                return true;
+            }
+        });
+
+        down.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        if(multiDown == false){
+                            multiDown = true;
+                            new SendDown().execute();
+                        }
+                        if(hilfeAktiv)
+                            alertView(getResources().getString(R.string.up),"Hilfe");
+                        break;
+
+                    case MotionEvent.ACTION_UP:
+                        multiDown = false;
+                }
+                return true;
+            }
+        });
 
         auto.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -213,5 +257,42 @@ public class programmiermodus extends Activity {
                     public void onClick(DialogInterface dialoginterface, int i) {
                     }
                 }).show();
+    }
+
+    //Async thread fuer das versenden von mehreren befehlen
+    //wird verwendet wenn der buttpn gehalten wird
+    class SendUp extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            while (multiUp && !hilfeAktiv) {
+                int[] pattern = command.getcommands(17, 2);
+                ir.send(pattern);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
+    }
+    //Async thread fuer das versenden von mehreren befehlen
+    //wird verwendet wenn der buttpn gehalten wird
+    class SendDown extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            while (multiDown && !hilfeAktiv) {
+                int[] pattern = command.getcommands(17, 3);
+                ir.send(pattern);
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            return null;
+        }
     }
 }
