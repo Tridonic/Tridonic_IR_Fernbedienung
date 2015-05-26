@@ -21,9 +21,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -246,35 +244,6 @@ public class installationsmodus extends Activity {
     }
 
 
-
-    //On resume wird aufgerufen, wenn die activity wider in den Vordergrud gebracht wird.
-    @Override
-    public void onResume() {
-        super.onResume();  // Always call the superclass method first
-        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which){
-                    case DialogInterface.BUTTON_POSITIVE:
-                        //Yes button clicked
-                        break;
-
-                    case DialogInterface.BUTTON_NEGATIVE:
-                        MainActivity.mTabHost.setCurrentTab(0);
-                        break;
-                }
-            }
-        };
-
-        //holt die Einstllungen
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
-
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(installationsmodus.this);
-        builder.setMessage("Die Funktionen im Installationsmodus können das System ungewollt modifizieren und ist nur für fortgeschrittene Benutzer geeignet.\n\nWollen sie fortfahren?").setTitle("Achtung!").setPositiveButton("Ja", dialogClickListener)
-                .setNegativeButton("Nein", dialogClickListener).show();
-    }
     public void alertView( String message, String title) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(installationsmodus.this);
 

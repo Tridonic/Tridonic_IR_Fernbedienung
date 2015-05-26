@@ -33,13 +33,37 @@ public class UserSettingActivity extends PreferenceActivity {
 
         setTitle("Einstellungen");
         addPreferencesFromResource(R.xml.settings);
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        final SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         Preference myPref = (Preference) findPreference("madein");
         myPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
                 //open browser or intent here
                 alertView("(c)2015 by Dario Duff.\nSupport: support@duff.li \n\nMade in Glarus, Switzerland.","Info");
+
+                return true;
+            }
+        });
+
+        Preference prefProg = (Preference) findPreference("prefProgrammier");
+        prefProg.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            public boolean onPreferenceClick(Preference preference) {
+                //open browser or intent here
+                if(sharedPrefs.getBoolean("prefProgrammier",false))
+                    alertView("Die Funktionen im Programmiermodus können das System ungewollt modifizieren und ist nur für fortgeschrittene Benutzer geeignet.","Achtung!");
+
+
+                return true;
+            }
+        });
+
+        Preference prefInstall = (Preference) findPreference("prefInstallation");
+        prefInstall.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            public boolean onPreferenceClick(Preference preference) {
+                //open browser or intent here
+                if(sharedPrefs.getBoolean("prefInstallation",false))
+                    alertView("Die Funktionen im Installationsmodus können das System ungewollt modifizieren und ist nur für fortgeschrittene Benutzer geeignet.","Achtung!");
+
 
                 return true;
             }
