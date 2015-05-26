@@ -21,8 +21,10 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -218,6 +220,16 @@ public class programmiermodus extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    //On resume wird aufgerufen, wenn die activity wider in den Vordergrud gebracht wird.
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+
+        //holt die Einstllungen
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
+    }
     private void alertView( String message, String title) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(programmiermodus.this);
 
@@ -229,7 +241,7 @@ public class programmiermodus extends Activity {
                 }).show();
     }
 
-    //Async thread fuer das versenden von mehreren befehlen
+    //Async thread fuer das versenden von mehreren Befehlen
     //wird verwendet wenn der buttpn gehalten wird
     class SendUp extends AsyncTask<Void, Void, Void> {
         @Override

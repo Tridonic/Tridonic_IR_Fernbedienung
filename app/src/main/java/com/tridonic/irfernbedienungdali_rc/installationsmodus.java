@@ -21,7 +21,9 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -244,6 +246,18 @@ public class installationsmodus extends Activity {
     }
 
 
+
+    //On resume wird aufgerufen, wenn die activity wider in den Vordergrud gebracht wird.
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+
+        //holt die Einstllungen
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        hilfeAktiv = sharedPrefs.getBoolean("prefHelpMode",false);
+        AlertDialog.Builder builder = new AlertDialog.Builder(installationsmodus.this);
+
+    }
     public void alertView( String message, String title) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(installationsmodus.this);
 
